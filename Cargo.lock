@@ -363,7 +363,7 @@ dependencies = [
  "ethers-core",
  "ethers-providers",
  "gadgets",
- "halo2_proofs",
+ "halo2_proofs 0.2.0",
  "hex",
  "itertools 0.10.5",
  "lazy_static",
@@ -503,7 +503,7 @@ dependencies = [
  "env_logger",
  "eth-types",
  "ethers-signers",
- "halo2_proofs",
+ "halo2_proofs 0.2.0",
  "itertools 0.10.5",
  "mock",
  "rand",
@@ -1160,7 +1160,7 @@ version = "0.1.0"
 dependencies = [
  "ethers-core",
  "ethers-signers",
- "halo2_proofs",
+ "halo2_proofs 0.3.0",
  "hex",
  "itertools 0.10.5",
  "lazy_static",
@@ -1709,7 +1709,7 @@ version = "0.1.0"
 dependencies = [
  "digest 0.7.6",
  "eth-types",
- "halo2_proofs",
+ "halo2_proofs 0.3.0",
  "rand",
  "rand_xorshift",
  "sha3 0.7.3",
@@ -1832,7 +1832,23 @@ dependencies = [
  "blake2b_simd",
  "ff",
  "group",
- "halo2curves",
+ "halo2curves 0.3.2",
+ "rand_chacha",
+ "rand_core",
+ "rayon",
+ "sha3 0.9.1",
+ "tracing",
+]
+
+[[package]]
+name = "halo2_proofs"
+version = "0.3.0"
+source = "git+https://github.com/privacy-scaling-explorations/halo2.git?tag=v0.3.0#73408a140737d8336490452193b21f5a7a94e7de"
+dependencies = [
+ "blake2b_simd",
+ "ff",
+ "group",
+ "halo2curves 0.6.0",
  "rand_chacha",
  "rand_core",
  "rayon",
@@ -1859,11 +1875,33 @@ dependencies = [
 ]
 
 [[package]]
+name = "halo2curves"
+version = "0.6.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d3675880dc0cc7cd468943266297198a28f88210ba60ca5e0e04d121edf86b46"
+dependencies = [
+ "blake2b_simd",
+ "ff",
+ "group",
+ "lazy_static",
+ "num-bigint",
+ "num-traits",
+ "pairing",
+ "pasta_curves",
+ "paste",
+ "rand",
+ "rand_core",
+ "rayon",
+ "static_assertions",
+ "subtle",
+]
+
+[[package]]
 name = "halo2wrong"
 version = "0.1.0"
 source = "git+https://github.com/privacy-scaling-explorations/halo2wrong?tag=v2023_04_20#f72db265aa3cebe297c9b9816e940d0e1d400886"
 dependencies = [
- "halo2_proofs",
+ "halo2_proofs 0.2.0",
  "num-bigint",
  "num-integer",
  "num-traits",
@@ -2206,7 +2244,7 @@ dependencies = [
  "ethers",
  "ethers-contract-abigen",
  "glob",
- "halo2_proofs",
+ "halo2_proofs 0.2.0",
  "lazy_static",
  "log",
  "mock",
@@ -2441,7 +2479,7 @@ dependencies = [
  "ethers",
  "eyre",
  "gadgets",
- "halo2_proofs",
+ "halo2_proofs 0.2.0",
  "hex",
  "mpt-witness-generator",
  "num_enum 0.6.1",
@@ -2844,6 +2882,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e2355d85b9a3786f481747ced0e0ff2ba35213a1f9bd406ed906554d7af805a1"
 
 [[package]]
+name = "pairing"
+version = "0.23.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "81fec4625e73cf41ef4bb6846cafa6d44736525f442ba45e407c4a000a13996f"
+dependencies = [
+ "group",
+]
+
+[[package]]
 name = "parity-scale-codec"
 version = "3.6.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3136,7 +3183,7 @@ name = "poseidon"
 version = "0.2.0"
 source = "git+https://github.com/privacy-scaling-explorations/poseidon.git?tag=v2023_04_20#807f8f555313f726ca03bdf941f798098f488ba4"
 dependencies = [
- "halo2curves",
+ "halo2curves 0.3.2",
  "subtle",
 ]
 
@@ -4037,8 +4084,8 @@ source = "git+https://github.com/privacy-scaling-explorations/snark-verifier?tag
 dependencies = [
  "bytes",
  "ecc",
- "halo2_proofs",
- "halo2curves",
+ "halo2_proofs 0.2.0",
+ "halo2curves 0.3.2",
  "hex",
  "itertools 0.10.5",
  "lazy_static",
@@ -4299,7 +4346,7 @@ dependencies = [
  "ethers-signers",
  "external-tracer",
  "glob",
- "halo2_proofs",
+ "halo2_proofs 0.2.0",
  "handlebars",
  "hex",
  "log",
@@ -5163,7 +5210,7 @@ dependencies = [
  "ethers-signers",
  "gadgets",
  "getrandom",
- "halo2_proofs",
+ "halo2_proofs 0.2.0",
  "hex",
  "integer",
  "itertools 0.10.5",
